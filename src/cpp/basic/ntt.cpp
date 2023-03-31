@@ -1,7 +1,7 @@
 /*
  * Problem for Testing Template : https://www.acmicpc.net/problem/15576
  * Test : Accepted
- * Last Updated : 2023.04.01 12:31 AM
+ * Last Updated : 2023.04.01 12:31 AM (KST)
  */
 const long long W = 3;
 const long long MOD = 998244353;
