@@ -1,5 +1,6 @@
 # PS Library (tony9402)
 
+vim snippet, vscode snippet 포함
 
 ## Index (목차)
 
