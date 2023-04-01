@@ -1,6 +1,6 @@
 /*
  * Problem for Testing Template : https://www.acmicpc.net/problem/11780
- * Test : 
+ * Test : Accepted
  * Last Updated : 2023.04.02 03:34 AM (KST)
  */
 using namespace std;

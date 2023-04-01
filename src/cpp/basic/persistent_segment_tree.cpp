@@ -1,6 +1,6 @@
 /*
  * Problem for Testing Template : https://www.acmicpc.net/problem/7469
- * Test : 
+ * Test : Accepted
  * Last Updated : 2023.04.01 03:21 PM (KST)
  */
 template<typename T>
