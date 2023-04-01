@@ -1,7 +1,7 @@
 /*
- * Problem for Testing Template : 
- * Test : 
- * Last Updated : 
+ * Problem for Testing Template : https://www.acmicpc.net/problem/1717
+ * Test : Accepted
+ * Last Updated : 2023.04.01 10:47 PM (KST)
  */
 struct UnionFind {
     vector<int> uf, siz;
