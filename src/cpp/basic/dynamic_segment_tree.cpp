@@ -1,7 +1,7 @@
 /*
- * Problem for Testing Template : 
- * Test : 
- * Last Updated : 
+ * Problem for Testing Template : https://www.acmicpc.net/problem/2042
+ * Test : Accepted
+ * Last Updated : 2023.04.01 03:00 PM (KST)
  */
 const int MAXL = 1000000000;
 template<typename T>
@@ -10,16 +10,16 @@ struct DynamicSegment{
         int l, r; // range
         T data;
         Node *left, *right;
-        Node():l(1),r(MAXL),data(0),left(0),right(0) { }
+        Node():l(1),r(MAXL),data(0),left(nullptr),right(nullptr) { }
         void extend(){
             if(l == r)return;
-            if(left == 0){ //if leaf node
+            if(left == nullptr){ //if leaf node
                 left  = new Node();
                 right =  new Node();
-                int m = (l + r) / 2;
+                int mid = (l + r) / 2;
                 left->l  = l;
-                left->r  = m;
-                right->l = m + 1;
+                left->r  = mid;
+                right->l = mid + 1;
                 right->r = r; 
             }
             return;
@@ -30,7 +30,8 @@ struct DynamicSegment{
     DynamicSegment() { tree = new Node(); }
     void update(Node *cur, int x, T data){
         if(x < cur->l || cur->r < x)return;
-        if(cur->l == cur->r)return cur->data = data, (void)(0);
+        if(cur->l == cur->r)return cur->data = data, (void)0;
+        cur->extend();
         update(cur->left, x, data);
         update(cur->right, x, data);
         cur->data = mergeNode(cur->left->data, cur->right->data);
