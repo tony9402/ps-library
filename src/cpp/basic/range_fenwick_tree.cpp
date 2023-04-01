@@ -1,7 +1,7 @@
 /*
- * Problem for Testing Template : 
- * Test : 
- * Last Updated : 
+ * Problem for Testing Template : https://www.acmicpc.net/problem/10999
+ * Test : Accepted
+ * Last Updated : 2023.04.01 03:19 PM (KST)
  */
 template<typename T>
 struct FenwickRU{ // Fenwick Range Update
@@ -10,7 +10,10 @@ struct FenwickRU{ // Fenwick Range Update
 
     FenwickRU(){ } 
     FenwickRU(int N) { setSize(N); }
-    void setSize(int N) { tree = add = mul = input = vector<T>(N + 1); }
+    void setSize(int N) { 
+        siz = N;
+        tree = add = mul = input = vector<T>(N + 1); 
+    }
     void putItem(int idx, T data) { update(idx, idx, data), input[idx] = data; }
     void __update(int idx, T _mul, T _add){
         for(; idx <= siz; idx += idx & -idx){
