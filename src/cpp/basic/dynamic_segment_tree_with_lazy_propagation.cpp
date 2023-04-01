@@ -1,7 +1,7 @@
 /*
- * Problem for Testing Template : 
- * Test : 
- * Last Updated : 
+ * Problem for Testing Template : https://www.acmicpc.net/problem/20212
+ * Test : Accepted
+ * Last Updated : 2023.04.01 03:04 PM (KST)
  */
 const int MAXL = 1000000000;
 template<typename T>
