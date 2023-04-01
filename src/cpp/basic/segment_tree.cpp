@@ -1,7 +1,7 @@
 /*
- * Problem for Testing Template : 
- * Test : 
- * Last Updated : 
+ * Problem for Testing Template : https://www.acmicpc.net/problem/2042
+ * Test : Accepted
+ * Last Updated : 2023.04.01 09:57 PM (KST)
  */
 template<typename T>
 struct Segment {
@@ -12,7 +12,6 @@ struct Segment {
         for(siz = 1; siz < N; siz <<= 1);
         tree = vector<T>(siz << 1);
     }
-    
     void update(int idx, T data) {
         tree[idx += siz] = data;
         while(idx >>= 1) tree[idx] = merge(tree[idx << 1], tree[idx << 1 | 1]);
