@@ -85,5 +85,8 @@ if __name__ == "__main__":
     template_root_path = f"src/{language}/basic/"
 
     code = read_test_code(os.path.join(test_root_path, f"{algorithm}.{extension}"))
-    code = convert_template(code)
+    while True:
+        pre = code[:]
+        code = convert_template(pre)
+        if ''.join(pre) == ''.join(code): break
     save_code(code, extenstion=extension)
