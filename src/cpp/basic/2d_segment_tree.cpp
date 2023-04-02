@@ -23,21 +23,21 @@ struct Segment2D{
     void build(){
         for(int i=sizY;i<sizY*2;i++)
             for(int j=sizX-1;j;j--)
-                tree[i][j] = mergeNode(tree[i][j<<1], tree[i][j<<1|1]);
+                tree[i][j] = merge(tree[i][j<<1], tree[i][j<<1|1]);
 
         for(int i=sizY-1;i;i--)
             for(int j=0;j<2*sizX;j++)
-                tree[i][j]=mergeNode(tree[i<<1][j], tree[i<<1|1][j]);
+                tree[i][j]=merge(tree[i<<1][j], tree[i<<1|1][j]);
     }
     void update(int y, int x, T data, bool add=false){
         if(add) addItem(y, x, data);
         else    putItem(y, x, data);
         x += sizX; y += sizY;
-        for(int i = x >> 1; i; i >>= 1) tree[y][i] = mergeNode(tree[y][i << 1], tree[y][i << 1 | 1]);
+        for(int i = x >> 1; i; i >>= 1) tree[y][i] = merge(tree[y][i << 1], tree[y][i << 1 | 1]);
 
         for(int i = y >> 1; i; i >>= 1)
             for(int j = x; j; j >>= 1)
-                tree[i][j] = mergeNode(tree[i<<1][j], tree[i<<1|1][j]);
+                tree[i][j] = merge(tree[i<<1][j], tree[i<<1|1][j]);
     }
     T query1D(int y, int l, int r){
         T ret = 0;
@@ -55,5 +55,5 @@ struct Segment2D{
         }
         return ret;
     }
-    T mergeNode(T a, T b){ return a + b; }
+    T merge(T, T);
 };

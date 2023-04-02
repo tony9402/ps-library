@@ -3,6 +3,7 @@
 using namespace std;
 
 [[dynamic_segment_tree_with_lazy_propagation]]
+template<typename T> T DynamicSegmentLazy<T>::merge(T a, T b) { return a + b; }
 
 struct Query{
     long long i, j, k, idx;

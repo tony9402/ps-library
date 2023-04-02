@@ -4,6 +4,8 @@ using namespace std;
 
 [[segment_tree_with_lazy_propagation]]
 
+template<typename T> T SegmentLazy<T>::merge(T a, T b) { return a + b; }
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(0);

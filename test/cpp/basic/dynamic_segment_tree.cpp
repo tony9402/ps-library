@@ -3,6 +3,7 @@
 using namespace std;
 
 [[dynamic_segment_tree]]
+template<typename T> T DynamicSegment<T>::merge(T a, T b) { return a + b; }
 DynamicSegment<long long> tree;
 
 int main(){

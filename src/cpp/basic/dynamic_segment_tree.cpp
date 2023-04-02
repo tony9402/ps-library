@@ -45,5 +45,5 @@ struct DynamicSegment{
         return mergeNode(query(cur->left, l, r), query(cur->right, l, r));
     }
     T query(int l, int r){ return query(tree, l, r); }
-    T mergeNode(T a, T b){ return a + b; }
+    T merge(T, T);
 };

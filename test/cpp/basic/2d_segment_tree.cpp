@@ -3,6 +3,7 @@
 using namespace std;
 
 [[2d_segment_tree]]
+template<typename T> T Segment2D<T>::merge(T a, T b) { return a + b; }
 
 Segment2D<long long> tree;
 

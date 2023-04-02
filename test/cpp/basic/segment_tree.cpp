@@ -4,6 +4,10 @@ using namespace std;
 
 [[segment_tree]]
 
+template<typename T> T Segment<T>::merge(T a, T b) {
+    return a + b;
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
