@@ -2,6 +2,9 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,macos,python,c++,java,visualstudiocode,windows,jupyternotebooks,git
 
 .vscode/
+.idea/
+cmake-build-debug/
+*.dSYM/
 
 ### C++ ###
 # Prerequisites
