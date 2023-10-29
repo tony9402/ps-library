@@ -177,10 +177,11 @@ struct SplayTree {
 
     // Debuging
     void inorder(Node *cur) {
-        push(cur);
-        if (cur->l) inorder(cur->l);
+        if(cur == nullptr) return;
+        cur->push();
+        inorder(cur->l);
         if (cur->data.dummy == false) cout << cur->data << ' ';
-        if (cur->r) inorder(cur->r);
+        inorder(cur->r);
     }
 
     void inorder() { inorder(root); }
