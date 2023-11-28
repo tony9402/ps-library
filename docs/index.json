@@ -1,0 +1,167 @@
+{
+    "2D Segment Tree": {
+        "name": "2d_segment_tree",
+        "prefix": [
+            "2dseg",
+            "2seg"
+        ]
+    },
+    "Aho-Corasick": {
+        "name": "aho_corasick",
+        "prefix": [
+            "aho",
+            "corasick",
+            "aho-corasick"
+        ]
+    },
+    "Dijkstra": {
+        "name": "dijkstra",
+        "prefix": [
+            "dijkstra"
+        ]
+    },
+    "Dinic": {
+        "name": "dinic",
+        "prefix": [
+            "flow",
+            "dinic"
+        ]
+    },
+    "Dynamic Segment Tree with Lazy Propagation": {
+        "name": "dynamic_segment_tree_with_lazy_propagation",
+        "prefix": [
+            "dseglazy",
+            "dynamic_segment_lazy"
+        ]
+    },
+    "Dynamic Segment Tree": {
+        "name": "dynamic_segment_tree",
+        "prefix": [
+            "dseg",
+            "dynamic_segment"
+        ]
+    },
+    "Fast Input": {
+        "name": "fastinput",
+        "prefix": [
+            "fastinput"
+        ]
+    },
+    "Fenwick Tree": {
+        "name": "fenwick_tree",
+        "prefix": [
+            "fenwick",
+            "fenwick_tree"
+        ]
+    },
+    "Floyd": {
+        "name": "floyd",
+        "prefix": [
+            "floyd"
+        ]
+    },
+    "Graph": {
+        "name": "graph",
+        "prefix": [
+            "graph"
+        ]
+    },
+    "Hashing": {
+        "name": "hashing",
+        "prefix": [
+            "hashing"
+        ]
+    },
+    "Heavy Light Decomposition": {
+        "name": "heavy_light_decomposition",
+        "prefix": [
+            "hld",
+            "heavy_light_decomposition"
+        ]
+    },
+    "KMP": {
+        "name": "kmp",
+        "prefix": [
+            "kmp"
+        ]
+    },
+    "NTT": {
+        "name": "ntt",
+        "prefix": [
+            "ntt"
+        ]
+    },
+    "Palindrome Tree": {
+        "name": "palindrome_tree",
+        "prefix": [
+            "palindrome_tree",
+            "eertree"
+        ]
+    },
+    "Persistent Segment Tree": {
+        "name": "persistent_segment_tree",
+        "prefix": [
+            "persistent_segment_tree",
+            "pst"
+        ]
+    },
+    "Power": {
+        "name": "power",
+        "prefix": [
+            "power"
+        ]
+    },
+    "Range Fenwick Tree": {
+        "name": "range_fenwick_tree",
+        "prefix": [
+            "range_fenwick_tree",
+            "rfenwick"
+        ]
+    },
+    "SCC": {
+        "name": "scc",
+        "prefix": [
+            "scc"
+        ]
+    },
+    "Segment Tree with Lazy Propagation": {
+        "name": "segment_tree_with_lazy_propagation",
+        "prefix": [
+            "seglazy",
+            "segmentlazy"
+        ]
+    },
+    "Segment Tree": {
+        "name": "segment_tree",
+        "prefix": [
+            "segment",
+            "segtree"
+        ]
+    },
+    "Splay Tree": {
+        "name": "splay_tree",
+        "prefix": [
+            "splay"
+        ]
+    },
+    "Suffix Array": {
+        "name": "suffix_array",
+        "prefix": [
+            "sa",
+            "suffix_array"
+        ]
+    },
+    "Trie": {
+        "name": "trie",
+        "prefix": [
+            "trie"
+        ]
+    },
+    "Union Find": {
+        "name": "union_find",
+        "prefix": [
+            "unionfind",
+            "uf"
+        ]
+    }
+}
