@@ -163,5 +163,23 @@
             "unionfind",
             "uf"
         ]
+    },
+    "TestCase Main": {
+        "name": "tcmain",
+        "prefix": [
+            "tcmain"
+        ]
+    },
+    "Main": {
+        "name": "main",
+        "prefix": [
+            "main"
+        ]
+    },
+    "BFS": {
+        "name": "bfs",
+        "prefix": [
+            "bfs"
+        ]
     }
 }
