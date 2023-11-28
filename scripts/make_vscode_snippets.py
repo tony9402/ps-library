@@ -93,10 +93,9 @@ if __name__ == "__main__":
             if "".join(pre) == "".join(code):
                 break
         
-        code: list[str] = [f"\"{x}\"" for x in code]
         snippet[k] = {
             "prefix": v["prefix"],
-            "body": code,
+            "body": [x.rstrip() for x in code],
             "description": k
         }
     
