@@ -181,5 +181,18 @@
         "prefix": [
             "bfs"
         ]
+    },
+    "Sort All": {
+        "name": "sortall",
+        "prefix": [
+            "sortall",
+            "sall"
+        ]
+    },
+    "Compress": {
+        "name": "compress",
+        "prefix": [
+            "Compress"
+        ]
     }
 }

@@ -158,7 +158,7 @@
             "    int N;",
             "    Dijkstra(Graph<pair<int, T>> G):G(G) { N = (int)G.size(); }",
             "    vector<T> dijkstra(int S) {",
-            "        vector<T> dist(N, INF);",
+            "        vector<T> dist(N + 1, INF);",
             "        priority_queue<pair<T, int>, vector<pair<T, int>>, greater<>> pq;",
             "        pq.emplace(dist[S] = 0, S);",
             "        while(!pq.empty()) {",
@@ -614,7 +614,7 @@
             "    vector<vector<T>> G;",
             "    Graph(int N) { G.resize(N + 1); }",
             "    void addEdge(int u, T data) { G[u].emplace_back(data); }",
-            "    int size() { return (int)G.size(); }",
+            "    int size() { return (int)G.size() - 1; }",
             "    vector<T>& operator[](const int &idx) { return G[idx]; }",
             "};"
         ],
@@ -668,7 +668,7 @@
             "    vector<vector<T>> G;",
             "    Graph(int N) { G.resize(N + 1); }",
             "    void addEdge(int u, T data) { G[u].emplace_back(data); }",
-            "    int size() { return (int)G.size(); }",
+            "    int size() { return (int)G.size() - 1; }",
             "    vector<T>& operator[](const int &idx) { return G[idx]; }",
             "};",
             "/*",
@@ -1549,6 +1549,8 @@
             "template<typename First, typename Second, typename Third> inline istream& operator>>(istream &in, tuple<First, Second, Third> &_data) { in>>get<0>(_data)>>get<1>(_data)>>get<2>(_data); return in; }",
             "template<typename First, typename Second, typename Third> inline ostream& operator<<(ostream &out, tuple<First, Second, Third> &_data) { out<<get<0>(_data)<<' '<<get<1>(_data)<<' '<<get<2>(_data); return out; }",
             "",
+            "template<typename T> auto Vector(const int N, const T& value) { return vector(N, value); }",
+            "template<typename...Ts> auto Vector(const int N, Ts... args) { return vector(n, Vector(args...))}",
             "template<typename InputType> void in(InputType& x) { cin>>x; }",
             "template<typename InputType, typename... InputTypes> void in(InputType& x, InputTypes& ...y) { cin>>x; in(y...); }",
             "template<typename IterableInputType> void vin(IterableInputType &V, int skip=0) { for(auto &x: V) if(--skip < 0) cin >> x; }",
@@ -1608,6 +1610,8 @@
             "template<typename First, typename Second, typename Third> inline istream& operator>>(istream &in, tuple<First, Second, Third> &_data) { in>>get<0>(_data)>>get<1>(_data)>>get<2>(_data); return in; }",
             "template<typename First, typename Second, typename Third> inline ostream& operator<<(ostream &out, tuple<First, Second, Third> &_data) { out<<get<0>(_data)<<' '<<get<1>(_data)<<' '<<get<2>(_data); return out; }",
             "",
+            "template<typename T> auto Vector(const int N, const T& value) { return vector(N, value); }",
+            "template<typename...Ts> auto Vector(const int N, Ts... args) { return vector(n, Vector(args...))}",
             "template<typename InputType> void in(InputType& x) { cin>>x; }",
             "template<typename InputType, typename... InputTypes> void in(InputType& x, InputTypes& ...y) { cin>>x; in(y...); }",
             "template<typename IterableInputType> void vin(IterableInputType &V, int skip=0) { for(auto &x: V) if(--skip < 0) cin >> x; }",
@@ -1645,7 +1649,7 @@
             "    vector<vector<T>> G;",
             "    Graph(int N) { G.resize(N + 1); }",
             "    void addEdge(int u, T data) { G[u].emplace_back(data); }",
-            "    int size() { return (int)G.size(); }",
+            "    int size() { return (int)G.size() - 1; }",
             "    vector<T>& operator[](const int &idx) { return G[idx]; }",
             "};",
             "",
@@ -1669,5 +1673,25 @@
             "};"
         ],
         "description": "BFS"
+    },
+    "Sort All": {
+        "prefix": [
+            "sortall",
+            "sall"
+        ],
+        "body": [
+            "sort($1.begin(), $1.end());"
+        ],
+        "description": "Sort All"
+    },
+    "Compress": {
+        "prefix": [
+            "Compress"
+        ],
+        "body": [
+            "sort($1.begin(), $1.end());",
+            "$1.erase(unique($1.begin(), $1.end()), $1.end());"
+        ],
+        "description": "Compress"
     }
 }

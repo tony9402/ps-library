@@ -26,6 +26,8 @@ template<typename First, typename Second> inline ostream& operator<<(ostream &ou
 template<typename First, typename Second, typename Third> inline istream& operator>>(istream &in, tuple<First, Second, Third> &_data) { in>>get<0>(_data)>>get<1>(_data)>>get<2>(_data); return in; }
 template<typename First, typename Second, typename Third> inline ostream& operator<<(ostream &out, tuple<First, Second, Third> &_data) { out<<get<0>(_data)<<' '<<get<1>(_data)<<' '<<get<2>(_data); return out; }
 
+template<typename T> auto Vector(const int N, const T& value) { return vector(N, value); }
+template<typename...Ts> auto Vector(const int N, Ts... args) { return vector(n, Vector(args...))}
 template<typename InputType> void in(InputType& x) { cin>>x; }
 template<typename InputType, typename... InputTypes> void in(InputType& x, InputTypes& ...y) { cin>>x; in(y...); }
 template<typename IterableInputType> void vin(IterableInputType &V, int skip=0) { for(auto &x: V) if(--skip < 0) cin >> x; }

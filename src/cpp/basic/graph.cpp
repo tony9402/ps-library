@@ -7,6 +7,6 @@ template<typename T> struct Graph {
     vector<vector<T>> G;
     Graph(int N) { G.resize(N + 1); }
     void addEdge(int u, T data) { G[u].emplace_back(data); }
-    int size() { return (int)G.size(); }
+    int size() { return (int)G.size() - 1; }
     vector<T>& operator[](const int &idx) { return G[idx]; }
 };

@@ -9,7 +9,7 @@ template<typename T> struct Dijkstra {
     int N;
     Dijkstra(Graph<pair<int, T>> G):G(G) { N = (int)G.size(); }
     vector<T> dijkstra(int S) {
-        vector<T> dist(N, INF);
+        vector<T> dist(N + 1, INF);
         priority_queue<pair<T, int>, vector<pair<T, int>>, greater<>> pq;
         pq.emplace(dist[S] = 0, S);
         while(!pq.empty()) {
