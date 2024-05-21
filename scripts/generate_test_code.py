@@ -38,7 +38,7 @@ def check_template_snippet(line: str) -> bool:
     if ' ' in substring:
         return False, ""
     
-    path = f"{template_root_path}/{substring}.{extension}"
+    path = os.path.join(template_root_path, f"{substring}.{extension}")
     return os.path.exists(path), path
 
 
@@ -68,7 +68,7 @@ def convert_template(code: list):
     return ret
 
 
-def save_code(code: list, extenstion: str) -> None:
+def save_code(code: list, extension: str) -> None:
     if type(code) != list:
         raise TypeError(f"Not list type found")
     with open(f"main.{extension}", 'w') as f:
@@ -81,12 +81,13 @@ if __name__ == "__main__":
         raise Exception("Check `argv` again.\nHow to run this code: python generate_test_code.py 2d_segment_tree c++")
     algorithm = sys.argv[1]
     language, extension = parsing(sys.argv[2])
+    target = sys.argv[3]
     test_root_path = f"test/{language}/basic"
-    template_root_path = f"src/{language}/basic/"
+    template_root_path = f"src/{language}/{target}"
 
     code = read_test_code(os.path.join(test_root_path, f"{algorithm}.{extension}"))
     while True:
         pre = code[:]
         code = convert_template(pre)
         if ''.join(pre) == ''.join(code): break
-    save_code(code, extenstion=extension)
+    save_code(code, extension=extension)
