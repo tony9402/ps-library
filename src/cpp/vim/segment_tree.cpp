@@ -13,18 +13,22 @@ struct Segment {
         for(siz = 1; siz < N; siz <<= 1);
         tree = vector<T>(siz << 1);
     }
+    void build() {
+        for(int i = siz - 1; i > 0; --i) {
+            tree[i] = tree[i << 1] + tree[i << 1 | 1];
+        }
+    }
     void update(int idx, T data) {
         tree[idx += siz] = data;
-        while(idx >>= 1) tree[idx] = merge(tree[idx << 1], tree[idx << 1 | 1]);
+        while(idx >>= 1) tree[idx] = tree[idx << 1] + tree[idx << 1 | 1];
     }
-    T query(int l, int r, int s, int e, int pos) {
-        if(s <= l && r <= e) return tree[pos];
-        if(e <  l || r <  s) return 0;
-        int mid = (l + r) / 2;
-        return merge(query(l, mid, s, e, pos << 1) , query(mid + 1, r, s, e, pos << 1 | 1));
+    T query(int l, int r) {
+        T ret_L = T(), ret_R = T();
+        for(l += siz, r += siz; l <= r; l >>= 1, r >>= 1) {
+            if(l & 1) ret_L = ret_L + tree[l ++];
+            if(~r & 1) ret_R = tree[r --] + ret_R;
+        }
+        return ret_L + ret_R;
     }
-    T query(int s, int e) { return query(0, siz - 1, s, e, 1); }
-    T merge(T a, T b) {
-        return a + b;
-    }
+    T& operator[](const int &idx) { return tree[idx + siz]; }
 };
