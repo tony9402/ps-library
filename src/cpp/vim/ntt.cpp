@@ -1,3 +1,5 @@
+[[power]]
+
 /*
  * Problem for Testing Template : https://www.acmicpc.net/problem/15576
  * Test : Accepted

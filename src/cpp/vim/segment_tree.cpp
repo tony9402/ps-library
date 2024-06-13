@@ -2,7 +2,7 @@
  * Problem for Testing Template : https://www.acmicpc.net/problem/2042
  * Test : Accepted
  * Last Updated : 2023.04.01 09:57 PM (KST)
- * Tag : segment, segtree
+ * Tag : segment, segtree, seg
  */
 template<typename T>
 struct Segment {
