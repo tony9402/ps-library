@@ -27,6 +27,7 @@ def main():
     clear_legacy_files()
     os.makedirs(CPP_TEMPLATE, exist_ok=True)
     templates = get_vim_templates()
+    print(f"Install {len(templates)} algorithm templates")
     for file_path in templates:
         filename = os.path.basename(file_path)
         shutil.copyfile(file_path, f"{CPP_TEMPLATE}/{filename}")
