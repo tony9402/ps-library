@@ -28,7 +28,7 @@ template<typename T> using Vec = vector<T>;
 template<typename T> using Que = queue<T>;
 template<typename T> using Dec = deque<T>;
 
-template<int fp=0> struct fastio { fastio() { ios::sync_with_stdio(false); cin.tie(0); if(fp)cout<<fixed<<' '<<setprecision(fp); } };
+template<int fp=0> struct fastio { fastio() { ios::sync_with_stdio(false); cin.tie(0); if(fp)cout<<fixed<<setprecision(fp); } };
 
 template<typename First, typename Second> inline istream& operator>>(istream &in, pair<First, Second> &_data) { in>>_data.first>>_data.second; return in; }
 template<typename First, typename Second> inline ostream& operator<<(ostream &out, pair<First, Second> &_data) { out<<_data.first<<' '<<_data.second; return out; }
