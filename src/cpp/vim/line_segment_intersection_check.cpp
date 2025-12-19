@@ -11,6 +11,7 @@ template<typename T> struct Point {
     Point operator+(Point p) { return Point(x+p.x,y+p.y); }
     Point operator-(Point p) { return Point(x-p.x,y-p.y); }
     T operator*(Point p) { return x*p.y-y*p.x; }
+    bool operator<(const Point &p) const { return make_pair(x, y) < make_pair(p.x, p.y); }
     bool operator==(Point p) { return x == p.x && y == p.y; }
     template<typename OT> void operator=(Point<OT> p) { *this=Point(p.x,p.y); }
     void t() { swap(x, y); }
