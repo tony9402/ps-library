@@ -8,8 +8,9 @@ template<typename T> struct Point {
     T x, y;
     Point():Point(0, 0) { }
     Point(T _x, T _y):x(_x),y(_y) { }
-    Point operator+(Point p) { return Point(x+p.x,y+p.y); }
-    Point operator-(Point p) { return Point(x-p.x,y-p.y); }
+    Point operator+(Point p) const { return Point(x+p.x,y+p.y); }
+    Point operator-(Point p) const { return Point(x-p.x,y-p.y); }
+    Point operator*(T k) { return Point(x * k, y * k); }
     T operator*(Point p) { return x*p.y-y*p.x; }
     bool operator<(const Point &p) const { return make_pair(x, y) < make_pair(p.x, p.y); }
     bool operator==(Point p) { return x == p.x && y == p.y; }
@@ -73,4 +74,8 @@ template<typename T, typename AT> pair<int, Point<AT>> intersection_point(Line<T
     T b = l1.ccw() * l2.dy() - l1.dy() * l2.ccw();
     T d = l1.dx() * l2.dy() - l1.dy() * l2.dx();
     return make_pair(chk, Point<AT>(1. * a / d, 1. * b / d));
+}
+template<typename T> T area(Point<T> a, Point<T> b, Point<T> c) {
+    T x = a * b + b * c + c * a;
+    return llabs(x);
 }

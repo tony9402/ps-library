@@ -25,3 +25,13 @@ template<typename T> vector<Point<T>> ConvexHull(vector<Point<T>> V) {
     for(int x: st) res.push_back(V[x]);
     return res;
 }
+template<typename T> long long max_distance_on_convex(const Vec<Point<T>> &convex) {
+    int N = (int)convex.size();
+    long long ret = 0;
+    for(int i = 0, j = 0; i < N; ++i) {
+        function<i64(i32, i32)> chk = [&](i32 a, i32 b) -> i64 { return area<i64>(convex[a], convex[(a + 1) % N], convex[b]); };
+        while(chk(i, j) < chk(i, (j + 1) % N)) ret = max(ret, dist(convex[i], convex[j])), j = (j + 1) % N;
+        ret = max(ret, dist(convex[i], convex[j]));
+    }
+    return ret;
+}
